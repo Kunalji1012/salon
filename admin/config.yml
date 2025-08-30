@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main   # change to "master" if your repo uses that branch
+
+media_folder: "images/uploads"   # uploaded images
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Salon Website"
+    files:
+      - file: "content.md"
+        label: "Website Content"
+        name: "content"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subhead", name: "hero_subhead", widget: "text" }
+          - { label: "About", name: "about", widget: "markdown" }
+          - { label: "Services", name: "services", widget: "markdown" }
+          - { label: "Pricing", name: "pricing", widget: "markdown" }
+          - { label: "Gallery", name: "gallery", widget: "markdown" }
+          - { label: "Testimonials", name: "testimonials", widget: "markdown" }
+          - { label: "Booking Info", name: "booking", widget: "markdown" }
+          - { label: "Contact Info", name: "contact", widget: "markdown" }
+          - { label: "FAQ", name: "faq", widget: "markdown" }
