@@ -1,9 +1,10 @@
 backend:
-  name: git-gateway
-  branch: main   # change to "master" if your repo uses that branch
+  name: github
+  repo: Kunalji1012/salon   # replace with your GitHub user/repo
+  branch: main
 
-media_folder: "images/uploads"   # uploaded images
-public_folder: "/images/uploads"
+media_folder: "images/uploads"     # where uploaded files are stored in repo
+public_folder: "/images/uploads"   # path for the website to access them
 
 collections:
   - name: "site"
@@ -18,8 +19,8 @@ collections:
           - { label: "About", name: "about", widget: "markdown" }
           - { label: "Services", name: "services", widget: "markdown" }
           - { label: "Pricing", name: "pricing", widget: "markdown" }
-          - { label: "Gallery", name: "gallery", widget: "markdown" }
           - { label: "Testimonials", name: "testimonials", widget: "markdown" }
-          - { label: "Booking Info", name: "booking", widget: "markdown" }
-          - { label: "Contact Info", name: "contact", widget: "markdown" }
+          - { label: "Gallery", name: "gallery", widget: "markdown" }
+          - { label: "Booking", name: "booking", widget: "markdown" }
+          - { label: "Contact", name: "contact", widget: "markdown" }
           - { label: "FAQ", name: "faq", widget: "markdown" }
