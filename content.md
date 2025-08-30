@@ -34,7 +34,7 @@ Clear rates. No hidden fees.
 - Wash + Cut + Finish | ₹799
 - Hair Color (Global) | ₹2499
 - Highlights | ₹1999
-- Keratin / Smoothening | ₹3499+
+- Keratin / Smoothening | ₹1000000
 ### Beauty & Makeup
 - HD Makeup (Party) | ₹2499
 - Bridal Makeup (HD) | ₹9999
