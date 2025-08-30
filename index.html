@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serenity Salon — Shine Everyday</title>
+  <meta name="description" content="A premium single-page salon website with services, gallery, testimonials, and online appointment booking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================
+       Page Loader
+  ========================== -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+    <div class="spinner" aria-label="Loading"></div>
+    <p>Preparing your glow...</p>
+  </div>
+
+  <!-- =========================
+       Header / Nav
+  ========================== -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand" aria-label="Serenity Salon Home">
+        <span class="brand-logo">✂️</span>
+        <span class="brand-name">Serenity Salon</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">☰</button>
+        <ul class="nav-links" id="primary-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#booking">Book</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn ghost small" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+        <a href="#booking" class="btn primary small">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       Hero
+  ========================== -->
+  <section id="hero" class="hero section">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="headline" id="hero-title">Look Good. Feel <span class="gradient">Amazing</span>.</h1>
+        <p class="subhead" id="hero-subhead">Premium hair, beauty & spa treatments. Clean, calm, and crafted for you.</p>
+        <div class="cta-row">
+          <a href="#services" class="btn primary">Explore Services</a>
+          <a href="#booking" class="btn outline">Book Appointment</a>
+        </div>
+        <ul class="hero-badges">
+          <li>ISO Clean Salon</li>
+          <li>Certified Stylists</li>
+          <li>5★ Rated</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <div class="hero-card glass">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1800&auto=format&fit=crop" alt="Salon interior" class="hero-img">
+          <div class="hero-stats">
+            <div><strong>10k+</strong><span>Happy Clients</span></div>
+            <div><strong>15+</strong><span>Expert Stylists</span></div>
+            <div><strong>12</strong><span>Years of Care</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll to About">▿</a>
+  </section>
+
+  <!-- =========================
+       About
+  ========================== -->
+  <section id="about" class="section about">
+    <div class="container grid-2">
+      <div>
+        <h2 id="about-title">About <span class="gradient">Serenity</span></h2>
+        <p id="about-p1">We’re a boutique salon in the heart of the city, blending award‑winning techniques with a warm, human touch. Our mission is to elevate your everyday— haircut to haircare, nails to nurture, make‑up to mindfulness.</p>
+        <p id="about-p2">Our team invests in ongoing education and trends so you don’t have to. You just show up—we’ll handle the glow‑up.</p>
+        <div class="feature-list">
+          <div class="feature"><span class="icon">🧼</span>Ultra‑hygienic tools</div>
+          <div class="feature"><span class="icon">🌿</span>Skin‑safe, eco‑friendly products</div>
+          <div class="feature"><span class="icon">💳</span>UPI & card payments</div>
+          <div class="feature"><span class="icon">📅</span>Smart online booking</div>
+        </div>
+      </div>
+      <aside class="about-card glass">
+        <h3>Hours</h3>
+        <ul class="hours">
+          <li>Mon–Fri: 10:00–20:00</li>
+          <li>Sat: 09:00–21:00</li>
+          <li>Sun: 10:00–18:00</li>
+        </ul>
+        <h3>Location</h3>
+        <p>2nd Floor, City Center, Main Road</p>
+        <a href="#contact" class="btn ghost small">Get Directions</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================
+       Services
+  ========================== -->
+  <section id="services" class="section services">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="services-title">Our <span class="gradient">Services</span></h2>
+        <p id="services-subhead">Everything you need for hair, skin and soul.</p>
+      </header>
+
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="hair">Hair</button>
+        <button class="chip" data-filter="beauty">Beauty</button>
+        <button class="chip" data-filter="spa">Spa</button>
+        <button class="chip" data-filter="groom">Groom</button>
+      </div>
+
+      <div class="cards" id="serviceCards">
+        <!-- Service cards (JS can filter) -->
+        <article class="card service" data-tags="hair">
+          <h3>Signature Haircut</h3>
+          <p>Personalized cut & finish.</p>
+          <div class="price">₹799</div>
+          <button class="btn outline book-btn" data-service="Signature Haircut">Book</button>
+        </article>
+
+        <article class="card service" data-tags="hair">
+          <h3>Keratin Treatment</h3>
+          <p>Frizz‑free, silky smooth.</p>
+          <div class="price">₹3499</div>
+          <button class="btn outline book-btn" data-service="Keratin Treatment">Book</button>
+        </article>
+
+        <article class="card service" data-tags="beauty">
+          <h3>HD Makeup</h3>
+          <p>Event‑ready glam.</p>
+          <div class="price">₹2499</div>
+          <button class="btn outline book-btn" data-service="HD Makeup">Book</button>
+        </article>
+
+        <article class="card service" data-tags="beauty groom">
+          <h3>Beard Styling</h3>
+          <p>Shape, trim & nourish.</p>
+          <div class="price">₹499</div>
+          <button class="btn outline book-btn" data-service="Beard Styling">Book</button>
+        </article>
+
+        <article class="card service" data-tags="spa">
+          <h3>Aromatherapy Spa</h3>
+          <p>Deep calm with essential oils.</p>
+          <div class="price">₹1999</div>
+          <button class="btn outline book-btn" data-service="Aromatherapy Spa">Book</button>
+        </article>
+
+        <article class="card service" data-tags="spa beauty">
+          <h3>Detan Facial</h3>
+          <p>Restore glow & clarity.</p>
+          <div class="price">₹1299</div>
+          <button class="btn outline book-btn" data-service="Detan Facial">Book</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Pricing (accordion)
+  ========================== -->
+  <section id="pricing" class="section pricing">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="pricing-title">Transparent <span class="gradient">Pricing</span></h2>
+        <p id="pricing-subhead">Clear rates. No hidden fees.</p>
+      </header>
+
+      <div class="accordion" id="priceAccordion">
+        <details class="acc" id="price-hair">
+          <summary>Hair Services</summary>
+          <ul class="price-list">
+            <li><span>Classic Haircut</span><strong>₹499</strong></li>
+            <li><span>Wash + Cut + Finish</span><strong>₹799</strong></li>
+            <li><span>Hair Color (Global)</span><strong>₹2499</strong></li>
+            <li><span>Highlights</span><strong>₹1999</strong></li>
+            <li><span>Keratin / Smoothening</span><strong>₹3499+</strong></li>
+          </ul>
+        </details>
+        <details class="acc" id="price-beauty">
+          <summary>Beauty & Makeup</summary>
+          <ul class="price-list">
+            <li><span>Party Makeup</span><strong>₹1499</strong></li>
+            <li><span>HD Makeup</span><strong>₹2499</strong></li>
+            <li><span>Bridal Makeup</span><strong>₹9999</strong></li>
+            <li><span>Nail Extensions</span><strong>₹1999</strong></li>
+          </ul>
+        </details>
+        <details class="acc" id="price-spa">
+          <summary>Spa & Wellness</summary>
+          <ul class="price-list">
+            <li><span>Head Massage (30m)</span><strong>₹599</strong></li>
+            <li><span>Full Body Spa (60m)</span><strong>₹2499</strong></li>
+            <li><span>Foot Reflexology</span><strong>₹999</strong></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Gallery (slider)
+  ========================== -->
+  <section id="gallery" class="section gallery">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="gallery-title">Studio <span class="gradient">Gallery</span></h2>
+        <p id="gallery-subhead">Real clients. Real results.</p>
+      </header>
+      <div class="slider" aria-roledescription="carousel">
+        <button class="slider-btn prev" aria-label="Previous" id="prevSlide">‹</button>
+        <div class="slides" id="slides">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1600&auto=format&fit=crop" alt="Salon view 1" class="slide">
+          <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?q=80&w=1600&auto=format&fit=crop" alt="Salon view 2" class="slide">
+          <img src="https://images.unsplash.com/photo-1519415943484-9fa184c39cf8?q=80&w=1600&auto=format&fit=crop" alt="Stylist at work" class="slide">
+          <img src="https://images.unsplash.com/photo-1522335789205-0aee5c9f4c9f?q=80&w=1600&auto=format&fit=crop" alt="Hair care products" class="slide">
+        </div>
+        <button class="slider-btn next" aria-label="Next" id="nextSlide">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Testimonials
+  ========================== -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <header class="section-head">
+        <h2 id="testimonials-title">Client <span class="gradient">Love</span></h2>
+        <p id="testimonials-subhead">What our guests say.</p>
+      </header>
+      <div class="testimonial-grid">
+        <figure class="t-card">
+          <blockquote>“Hands down the best haircut I’ve had. Friendly, fast, fabulous.”</blockquote>
+          <figcaption>— Ananya S.</figcaption>
+        </figure>
+        <figure class="t-card">
+          <blockquote>“So clean and serene. Loved the spa session!”</blockquote>
+          <figcaption>— Rahul K.</figcaption>
+        </figure>
+        <figure class="t-card">
+          <blockquote>“Transparent pricing and great stylists. Coming back soon.”</blockquote>
+          <figcaption>— Neha M.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       FAQ (Markdown injected)
+  ========================== -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <header class="section-head">
+        <h2>Salon <span class="gradient">Guide</span></h2>
+        <p>Powered by Markdown — easy to edit in <code>content.md</code>.</p>
+      </header>
+      <article id="md-content" class="md"></article>
+    </div>
+  </section>
+
+  <!-- =========================
+       Booking
+  ========================== -->
+  <section id="booking" class="section booking">
+    <div class="container grid-2">
+      <div>
+        <header class="section-head">
+          <h2 id="booking-title">Book Your <span class="gradient">Appointment</span></h2>
+          <p id="booking-subhead">Pick a service and time— we’ll confirm instantly.</p>
+        </header>
+
+        <form id="bookForm" class="form" novalidate>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required/>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="phone">Phone (WhatsApp)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required/>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Signature Haircut</option>
+              <option>Keratin Treatment</option>
+              <option>HD Makeup</option>
+              <option>Beard Styling</option>
+              <option>Aromatherapy Spa</option>
+              <option>Detan Facial</option>
+            </select>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" required/>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="time">Time</label>
+            <input id="time" name="time" type="time" required/>
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="notes">Notes (optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Any preferences or allergies?"></textarea>
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn primary">Confirm Booking</button>
+            <button type="reset" class="btn ghost">Clear</button>
+          </div>
+          <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <aside class="booking-card glass">
+        <h3>Need help?</h3>
+        <p>Call or WhatsApp us for quick queries and recommendations.</p>
+        <ul class="contact-quick">
+          <li>📞 +91 90000 12345</li>
+          <li>💬 wa.me/9000012345</li>
+          <li>📍 City Center, Main Road</li>
+        </ul>
+        <a href="#contact" class="btn outline small">Contact Us</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- =========================
+       Contact
+  ========================== -->
+  <section id="contact" class="section contact">
+    <div class="container grid-2">
+      <div>
+        <header class="section-head">
+          <h2 id="contact-title">Visit & <span class="gradient">Connect</span></h2>
+          <p id="contact-subhead">We’re easy to reach.</p>
+        </header>
+        <ul class="list" id="contact-list">
+          <li><strong>Address:</strong> 2nd Floor, City Center, Main Road</li>
+          <li><strong>Phone:</strong> +91 90000 12345</li>
+          <li><strong>Email:</strong> hello@serenitysalon.in</li>
+          <li><strong>Open:</strong> Mon–Sun</li>
+        </ul>
+        <div class="socials" id="socials-list">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="YouTube">YouTube</a>
+          <a href="#" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe class="map" title="Google Map (placeholder)"
+          src="https://maps.google.com/maps?q=Connaught%20Place%2C%20New%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#hero" class="brand small">
+          <span class="brand-logo">✂️</span>
+          <span class="brand-name">Serenity Salon</span>
+        </a>
+        <p>© <span id="year"></span> Serenity Salon. All rights reserved.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <form class="newsletter" id="newsletterForm">
+        <label for="email" class="visually-hidden">Email</label>
+        <input id="email" type="email" placeholder="Get offers by email" required />
+        <button class="btn small">Subscribe</button>
+        <small class="nstatus" aria-live="polite"></small>
+      </form>
+    </div>
+  </footer>
+
+  <a href="#booking" class="fab" aria-label="Book on WhatsApp">🟢</a>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
