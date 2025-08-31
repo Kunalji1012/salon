@@ -2,6 +2,9 @@ backend:
   name: github
   repo: kunalji1012/salon   # your repo
   branch: main
+  base_url: https://decap-oauth.netlify.app   # Decap’s hosted auth service
+  auth_endpoint: auth
+  client_id: 0v23LiPH1Y1PRgh2kRWg   # <-- your Client ID here
 
 media_folder: "images/uploads"   # where uploaded images are stored in repo
 public_folder: "/images/uploads" # how the site will reference them
@@ -125,3 +128,4 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Answer", name: "answer", widget: "text" }
+
