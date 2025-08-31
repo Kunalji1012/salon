@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main   # or "master" depending on your repo
+  name: github
+  repo: kunalji1012/salon   # your repo
+  branch: main
 
 media_folder: "images/uploads"   # where uploaded images are stored in repo
 public_folder: "/images/uploads" # how the site will reference them
@@ -121,3 +122,4 @@ collections:
             fields:
               - { label: "Question", name: "question", widget: "string" }
               - { label: "Answer", name: "answer", widget: "text" }
+
