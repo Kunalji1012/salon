@@ -1,26 +1,123 @@
 backend:
-  name: github
-  repo: Kunalji1012/salon   # replace with your GitHub user/repo
-  branch: main
+  name: git-gateway
+  branch: main   # or "master" depending on your repo
 
-media_folder: "images/uploads"     # where uploaded files are stored in repo
-public_folder: "/images/uploads"   # path for the website to access them
+media_folder: "images/uploads"   # where uploaded images are stored in repo
+public_folder: "/images/uploads" # how the site will reference them
+
+publish_mode: editorial_workflow  # optional: allows drafts
 
 collections:
-  - name: "site"
-    label: "Salon Website"
+  - name: "content"
+    label: "Site Content"
     files:
-      - file: "content.md"
-        label: "Website Content"
-        name: "content"
+      - label: "Main Content"
+        name: "main"
+        file: "content.md"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subhead", name: "hero_subhead", widget: "text" }
-          - { label: "About", name: "about", widget: "markdown" }
-          - { label: "Services", name: "services", widget: "markdown" }
-          - { label: "Pricing", name: "pricing", widget: "markdown" }
-          - { label: "Testimonials", name: "testimonials", widget: "markdown" }
-          - { label: "Gallery", name: "gallery", widget: "markdown" }
-          - { label: "Booking", name: "booking", widget: "markdown" }
-          - { label: "Contact", name: "contact", widget: "markdown" }
-          - { label: "FAQ", name: "faq", widget: "markdown" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Paragraphs", name: "paragraphs", widget: "list", widget_item: "text" }
+
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Category", name: "category", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Tags", name: "tags", widget: "string" }
+
+          - label: "Pricing"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - label: "Hair Services"
+                name: "hair"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+              - label: "Beauty & Makeup"
+                name: "beauty"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+              - label: "Spa & Wellness"
+                name: "spa"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+
+          - label: "Gallery"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Quote", name: "quote", widget: "text" }
+                  - { label: "Name", name: "name", widget: "string" }
+
+          - label: "Booking"
+            name: "booking"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subhead", name: "subhead", widget: "string" }
+              - label: "Details"
+                name: "details"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value", name: "value", widget: "string" }
+              - label: "Socials"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
