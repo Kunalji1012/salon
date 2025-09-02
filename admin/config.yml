@@ -1,131 +1,59 @@
 backend:
-  name: github
-  repo: kunalji1012/salon   # your repo
-  branch: main
-  base_url: https://decap-oauth.netlify.app   # Decap’s hosted auth service
-  auth_endpoint: auth
-  client_id: 0v23LiPH1Y1PRgh2kRWg   # <-- your Client ID here
+  name: git-gateway
+  branch: main   # or master if your repo uses that
 
-media_folder: "images/uploads"   # where uploaded images are stored in repo
-public_folder: "/images/uploads" # how the site will reference them
-
-publish_mode: editorial_workflow  # optional: allows drafts
+media_folder: "uploads"      # where uploaded images are stored in repo
+public_folder: "/uploads"    # how site references images
 
 collections:
   - name: "content"
     label: "Site Content"
     files:
-      - label: "Main Content"
+      - file: "content.md"
+        label: "Main Content"
         name: "main"
-        file: "content.md"
         fields:
           - label: "Hero"
             name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
+            widget: "markdown"
+            hint: "Edit hero title & subhead (# Hero section)"
 
           - label: "About"
             name: "about"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - label: "Paragraphs"
-                name: "paragraphs"
-                widget: "list"
-                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+            widget: "markdown"
+            hint: "Edit About section (title, paragraphs)"
 
           - label: "Services"
             name: "services"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
-              - label: "Items"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Category", name: "category", widget: "string" }
-                  - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-                  - { label: "Price", name: "price", widget: "string" }
-                  - { label: "Tags", name: "tags", widget: "string" }
+            widget: "markdown"
+            hint: "Edit services title, subhead & items"
 
           - label: "Pricing"
             name: "pricing"
-            widget: "object"
-            fields:
-              - { label: "Subhead", name: "subhead", widget: "string" }
-              - label: "Hair Services"
-                name: "hair"
-                widget: "list"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Price", name: "price", widget: "string" }
-              - label: "Beauty & Makeup"
-                name: "beauty"
-                widget: "list"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Price", name: "price", widget: "string" }
-              - label: "Spa & Wellness"
-                name: "spa"
-                widget: "list"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Price", name: "price", widget: "string" }
+            widget: "markdown"
+            hint: "Edit pricing subhead & service lists"
 
           - label: "Gallery"
             name: "gallery"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
+            widget: "markdown"
+            hint: "Edit gallery title & subhead"
 
           - label: "Testimonials"
             name: "testimonials"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
-              - label: "Items"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Quote", name: "quote", widget: "text" }
-                  - { label: "Name", name: "name", widget: "string" }
+            widget: "markdown"
+            hint: "Edit testimonials list"
 
           - label: "Booking"
             name: "booking"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
+            widget: "markdown"
+            hint: "Edit booking title & subhead"
 
           - label: "Contact"
             name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subhead", name: "subhead", widget: "string" }
-              - label: "Details"
-                name: "details"
-                widget: "list"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Value", name: "value", widget: "string" }
-              - label: "Socials"
-                name: "socials"
-                widget: "list"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "URL", name: "url", widget: "string" }
+            widget: "markdown"
+            hint: "Edit contact details & socials"
 
           - label: "FAQ"
             name: "faq"
-            widget: "list"
-            fields:
-              - { label: "Question", name: "question", widget: "string" }
-              - { label: "Answer", name: "answer", widget: "text" }
-
+            widget: "markdown"
+            hint: "Edit FAQ questions & answers"
